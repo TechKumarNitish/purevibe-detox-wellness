@@ -17,8 +17,11 @@ import {
   CheckCircle
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { WHATSAPP_PHONE } from "@/config";
 
 const Contact = () => {
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -229,9 +232,26 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full wellness-shadow">
+
+                  <Button type="submit" className="w-full wellness-shadow mb-2">
                     Send Message
                     <Send className="w-4 h-4 ml-2" />
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full wellness-shadow text-green-600 border-green-500 hover:bg-green-50 mb-2"
+                    title="Send WhatsApp Message"
+                  >
+                    <a
+                      href={`https://wa.me/${WHATSAPP_PHONE.replace(/[^\d]/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Send WhatsApp Message"
+                    >
+                      Message on WhatsApp
+                      <Heart className="w-4 h-4 ml-2 text-green-500" />
+                    </a>
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
@@ -333,8 +353,8 @@ const Contact = () => {
             Don't wait to start your wellness journey. Book your consultation today 
             and take the first step towards a healthier, more vibrant you.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-            Book Free Consultation
+          <Button onClick={()=>navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
+            Book Now
             <Send className="w-5 h-5 ml-2" />
           </Button>
         </div>

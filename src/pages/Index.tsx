@@ -118,7 +118,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="wellness-shadow text-lg px-8 py-6">
+            <Button onClick={()=>navigate("/book-now")} size="lg" className="wellness-shadow text-lg px-8 py-6">
               Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
@@ -218,7 +218,7 @@ const Index = () => {
                     <span className="font-bold text-primary">{service.price}</span>
                   </div>
                   
-                  <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  <Button onClick={()=>navigate("/book-now")} className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
                     Book Now
                   </Button>
                 </CardContent>
@@ -359,11 +359,11 @@ const Index = () => {
             Book your consultation today and discover the PureVibe difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-              Schedule Consultation
+            <Button onClick={()=>navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground bg-primary-foreground text-primary">
               Call Us: (555) 123-4567
             </Button>
           </div>

@@ -272,8 +272,8 @@ const About = () => {
           <p className="text-xl mb-8 text-primary-foreground/90">
             Join thousands of satisfied clients who have transformed their health with our expert guidance.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-            Book Your Consultation
+          <Button onClick={()=>navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
+            Book Now
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

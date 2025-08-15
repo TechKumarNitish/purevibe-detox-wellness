@@ -13,14 +13,18 @@ import {
   Heart,
   Sparkles
 } from "lucide-react";
+
 import juiceCleansingImage from "@/assets/juice-cleansing.jpg";
 import herbalSteamImage from "@/assets/herbal-steam.jpg";
 import colonHydrotherapyImage from "@/assets/colon-hydrotherapy.jpg";
 import lymphaticMassageImage from "@/assets/lymphatic-massage.jpg";
 import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
 import infraredSaunaImage from "@/assets/infrared-sauna.jpg";
+// import { WHATSAPP_PHONE } from "@/config";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate=useNavigate()
   const services = [
     {
       title: "Juice Cleansing Program",
@@ -286,7 +290,7 @@ const Services = () => {
 
                   {/* CTA */}
                   <div className="flex gap-3">
-                    <Button className="flex-1 wellness-shadow">
+                    <Button onClick={()=>navigate("/book-now")} className="flex-1 wellness-shadow">
                       Book Now
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -380,8 +384,8 @@ const Services = () => {
             for their wellness transformation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-              Book Consultation
+            <Button onClick={()=>navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Leaf } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -46,7 +47,7 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="default" className="wellness-shadow">
+            <Button onClick={()=>{navigate("/book-now")}} variant="default" className="wellness-shadow">
               Book Now
             </Button>
           </div>
@@ -87,7 +88,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button variant="default" className="w-full wellness-shadow">
+                <Button onClick={()=>navigate("/book-now")} variant="default" className="w-full wellness-shadow">
                   Book Now
                 </Button>
               </div>
