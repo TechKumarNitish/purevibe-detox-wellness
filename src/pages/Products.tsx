@@ -24,8 +24,8 @@ const Products = () => {
       id: 1,
       title: "Organic Detox Tea Collection",
       description: "Premium blend of organic herbs including chamomile, ginger, and green tea for daily detox support.",
-      price: "$49.99",
-      originalPrice: "$59.99",
+      price: "₹49.99",
+      originalPrice: "₹59.99",
       rating: 4.8,
       reviews: 127,
       image: detoxTeaImage,
@@ -36,7 +36,7 @@ const Products = () => {
       id: 2,
       title: "Premium Wellness Supplements",
       description: "Complete vitamin and mineral complex with probiotics to support your detox journey.",
-      price: "$89.99",
+      price: "₹89.99",
       originalPrice: null,
       rating: 4.9,
       reviews: 203,
@@ -48,8 +48,8 @@ const Products = () => {
       id: 3,
       title: "Essential Oils Aromatherapy Set",
       description: "Pure essential oils including lavender, eucalyptus, and tea tree for relaxation and wellness.",
-      price: "$79.99",
-      originalPrice: "$99.99",
+      price: "₹79.99",
+      originalPrice: "₹99.99",
       rating: 4.7,
       reviews: 89,
       image: essentialOilsImage,
@@ -60,7 +60,7 @@ const Products = () => {
       id: 4,
       title: "Natural Detox Skincare Kit",
       description: "Complete skincare routine with organic cleansers, scrubs, and moisturizers for glowing skin.",
-      price: "$129.99",
+      price: "₹129.99",
       originalPrice: null,
       rating: 4.9,
       reviews: 156,
@@ -72,8 +72,8 @@ const Products = () => {
       id: 5,
       title: "Wellness & Detox Guidebooks",
       description: "Expert-written guides on detoxification, healthy living, and mindfulness practices.",
-      price: "$34.99",
-      originalPrice: "$44.99",
+      price: "₹34.99",
+      originalPrice: "₹44.99",
       rating: 4.6,
       reviews: 78,
       image: wellnessBooksImage,
@@ -84,8 +84,8 @@ const Products = () => {
       id: 6,
       title: "Complete Home Detox Kit",
       description: "Everything you need for a 7-day home detox program including teas, supplements, and guides.",
-      price: "$199.99",
-      originalPrice: "$249.99",
+      price: "₹199.99",
+      originalPrice: "₹249.99",
       rating: 4.8,
       reviews: 234,
       image: homeDetoxKitImage,
@@ -158,7 +158,7 @@ const Products = () => {
                     )}
                     {product.originalPrice && (
                       <Badge variant="destructive">
-                        Save ${(parseFloat(product.originalPrice.replace('$', '')) - parseFloat(product.price.replace('$', ''))).toFixed(2)}
+                        Save ₹{(parseFloat(product.originalPrice.replace('₹', '')) - parseFloat(product.price.replace('₹', ''))).toFixed(2)}
                       </Badge>
                     )}
                   </div>

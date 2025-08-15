@@ -32,28 +32,28 @@ const Index = () => {
       title: "Juice Cleansing",
       description: "Organic cold-pressed juices to cleanse and energize your body naturally.",
       duration: "3-7 days",
-      price: "From $199",
+      price: "From ₹199",
       image: juiceCleansingImage
     },
     {
       title: "Herbal Steam Bath",
       description: "Detoxify through your skin with our therapeutic herbal steam treatments.",
       duration: "45 min",
-      price: "$89",
+      price: "₹89",
       image: herbalSteamImage
     },
     {
       title: "Lymphatic Drainage",
       description: "Gentle massage technique to boost circulation and eliminate toxins.",
       duration: "60 min",
-      price: "$129",
+      price: "₹129",
       image: lymphaticMassageImage
     },
     {
       title: "Full-Body Detox",
       description: "Comprehensive detox program combining multiple therapies for optimal results.",
       duration: "3 hours",
-      price: "$299",
+      price: "₹299",
       image: fullBodyDetoxImage
     }
   ];
@@ -96,7 +96,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(₹{heroImage})` }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
@@ -255,25 +255,25 @@ const Index = () => {
             {[
               {
                 title: "Detox Tea Collection",
-                price: "$49.99",
+                price: "₹49.99",
                 image: detoxTeaImage,
                 rating: 4.8
               },
               {
                 title: "Wellness Supplements",
-                price: "$89.99",
+                price: "₹89.99",
                 image: supplementsImage,
                 rating: 4.9
               },
               {
                 title: "Skincare Detox Kit",
-                price: "$129.99",
+                price: "₹129.99",
                 image: skincareKitImage,
                 rating: 4.9
               },
               {
                 title: "Complete Home Kit",
-                price: "$199.99",
+                price: "₹199.99",
                 image: fullBodyDetoxImage,
                 rating: 4.8
               }

@@ -26,7 +26,7 @@ const Services = () => {
       title: "Juice Cleansing Program",
       description: "A comprehensive juice cleanse using organic, cold-pressed juices designed to flush toxins and boost energy levels naturally.",
       duration: "3-7 days",
-      price: "From $199",
+      price: "From ₹199",
       rating: 4.9,
       reviews: 234,
       image: juiceCleansingImage,
@@ -50,7 +50,7 @@ const Services = () => {
       title: "Herbal Steam Bath",
       description: "Therapeutic steam therapy infused with carefully selected herbs to promote deep detoxification through the skin.",
       duration: "45 minutes",
-      price: "$89",
+      price: "₹89",
       rating: 4.8,
       reviews: 189,
       image: herbalSteamImage,
@@ -73,7 +73,7 @@ const Services = () => {
       title: "Colon Hydrotherapy",
       description: "Gentle, safe colon cleansing therapy that removes waste buildup and promotes optimal digestive health.",
       duration: "60 minutes",
-      price: "$149",
+      price: "₹149",
       rating: 4.9,
       reviews: 156,
       image: colonHydrotherapyImage,
@@ -96,7 +96,7 @@ const Services = () => {
       title: "Lymphatic Drainage Massage",
       description: "Specialized massage technique designed to stimulate lymph flow and eliminate toxins from the body naturally.",
       duration: "90 minutes",
-      price: "$129",
+      price: "₹129",
       rating: 4.9,
       reviews: 298,
       image: lymphaticMassageImage,
@@ -119,7 +119,7 @@ const Services = () => {
       title: "Full-Body Detox Program",
       description: "Comprehensive 3-hour detox experience combining multiple therapies for maximum cleansing and rejuvenation.",
       duration: "3 hours",
-      price: "$299",
+      price: "₹299",
       rating: 5.0,
       reviews: 87,
       image: fullBodyDetoxImage,
@@ -143,7 +143,7 @@ const Services = () => {
       title: "Infrared Sauna Therapy",
       description: "Advanced infrared sauna sessions that penetrate deep into tissues for enhanced detoxification and healing.",
       duration: "45 minutes",
-      price: "$79",
+      price: "₹79",
       rating: 4.7,
       reviews: 145,
       image: infraredSaunaImage,
@@ -165,10 +165,10 @@ const Services = () => {
   ];
 
   const addOns = [
-    { name: "Nutritional Consultation", price: "$49", duration: "30 min" },
-    { name: "Wellness Coaching Session", price: "$69", duration: "45 min" },
-    { name: "Organic Supplement Package", price: "$89", duration: "1 month supply" },
-    { name: "Home Detox Kit", price: "$129", duration: "7 days" }
+    { name: "Nutritional Consultation", price: "₹49", duration: "30 min" },
+    { name: "Wellness Coaching Session", price: "₹69", duration: "45 min" },
+    { name: "Organic Supplement Package", price: "₹89", duration: "1 month supply" },
+    { name: "Home Detox Kit", price: "₹129", duration: "7 days" }
   ];
 
   return (
@@ -202,9 +202,9 @@ const Services = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title} 
-                className={`card-shadow hover:scale-[1.02] transition-spring overflow-hidden ${
+                className={`card-shadow hover:scale-[1.02] transition-spring overflow-hidden ₹{
                   service.popular ? 'ring-2 ring-primary' : ''
-                } ${service.featured ? 'ring-2 ring-wellness-green-dark' : ''}`}
+                } ₹{service.featured ? 'ring-2 ring-wellness-green-dark' : ''}`}
               >
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -362,7 +362,7 @@ const Services = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Monthly Membership</h3>
                 <p className="text-muted-foreground mb-4">Unlimited access to all services</p>
-                <div className="text-2xl font-bold text-primary">$499/month</div>
+                <div className="text-2xl font-bold text-primary">₹499/month</div>
               </CardContent>
             </Card>
           </div>
