@@ -25,6 +25,7 @@ import supplementsImage from "@/assets/wellness-supplements.jpg";
 import skincareKitImage from "@/assets/detox-skincare-kit.jpg";
 
 import { WHATSAPP_PHONE } from "@/config";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const navigate=useNavigate()
@@ -123,11 +124,11 @@ const Index = () => {
               Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            {/* <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
               <a href={`tel:${WHATSAPP_PHONE.replace(/[^\d+]/g, "")}`}>
                 Call Us: {WHATSAPP_PHONE}
               </a>
-            </Button>
+            </Button> */}
           </div>
         </div>
         
