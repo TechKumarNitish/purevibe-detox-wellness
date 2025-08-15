@@ -119,7 +119,7 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <Button size="lg" className="wellness-shadow text-lg px-8 py-6">
-              Book Your Session
+              Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             {/* <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white hover:text-foreground">
