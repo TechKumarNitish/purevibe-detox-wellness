@@ -12,8 +12,10 @@ import {
   Leaf,
   Star
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   const team = [
     {
       name: "Dr. Sarah Martinez",
@@ -114,7 +116,7 @@ const About = () => {
                 the same life-changing benefits. Today, we've helped over 5,000 clients reclaim their 
                 health and vitality through our proven natural detox methods.
               </p>
-              <Button size="lg" className="wellness-shadow">
+              <Button onClick={()=>navigate("/contact")} size="lg" className="wellness-shadow">
                 Start Your Journey
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
