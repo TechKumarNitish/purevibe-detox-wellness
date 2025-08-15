@@ -198,7 +198,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  mb-12">
             {services.map((service, index) => (
               <Card key={service.title} className="card-shadow hover:scale-105 transition-spring overflow-hidden group">
                 <div className="relative h-48 overflow-hidden">
@@ -224,6 +224,12 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center">
+            <Button onClick={()=>{navigate("/services")}} size="lg" variant="outline" className="text-lg px-8 py-6">
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </div>
       </section>
