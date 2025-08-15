@@ -13,6 +13,12 @@ import {
   Heart,
   Sparkles
 } from "lucide-react";
+import juiceCleansingImage from "@/assets/juice-cleansing.jpg";
+import herbalSteamImage from "@/assets/herbal-steam.jpg";
+import colonHydrotherapyImage from "@/assets/colon-hydrotherapy.jpg";
+import lymphaticMassageImage from "@/assets/lymphatic-massage.jpg";
+import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
+import infraredSaunaImage from "@/assets/infrared-sauna.jpg";
 
 const Services = () => {
   const services = [
@@ -23,6 +29,7 @@ const Services = () => {
       price: "From $199",
       rating: 4.9,
       reviews: 234,
+      image: juiceCleansingImage,
       benefits: [
         "Increased energy levels",
         "Improved digestion",
@@ -46,6 +53,7 @@ const Services = () => {
       price: "$89",
       rating: 4.8,
       reviews: 189,
+      image: herbalSteamImage,
       benefits: [
         "Deep pore cleansing",
         "Stress relief",
@@ -68,6 +76,7 @@ const Services = () => {
       price: "$149",
       rating: 4.9,
       reviews: 156,
+      image: colonHydrotherapyImage,
       benefits: [
         "Improved digestive health",
         "Enhanced nutrient absorption",
@@ -90,6 +99,7 @@ const Services = () => {
       price: "$129",
       rating: 4.9,
       reviews: 298,
+      image: lymphaticMassageImage,
       benefits: [
         "Reduced swelling",
         "Boosted immune system",
@@ -112,6 +122,7 @@ const Services = () => {
       price: "$299",
       rating: 5.0,
       reviews: 87,
+      image: fullBodyDetoxImage,
       benefits: [
         "Complete body detox",
         "Maximum results",
@@ -135,6 +146,7 @@ const Services = () => {
       price: "$79",
       rating: 4.7,
       reviews: 145,
+      image: infraredSaunaImage,
       benefits: [
         "Deep tissue detox",
         "Pain relief",
@@ -194,25 +206,33 @@ const Services = () => {
                   service.popular ? 'ring-2 ring-primary' : ''
                 } ${service.featured ? 'ring-2 ring-wellness-green-dark' : ''}`}
               >
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-smooth"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  {service.popular && (
+                    <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+                      <Star className="w-3 h-3 mr-1" />
+                      Popular
+                    </Badge>
+                  )}
+                  {service.featured && (
+                    <Badge className="absolute top-4 right-4 bg-wellness-green-dark text-white">
+                      <Sparkles className="w-3 h-3 mr-1" />
+                      Featured
+                    </Badge>
+                  )}
+                </div>
+                
                 <CardContent className="p-8">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="text-2xl font-bold">{service.title}</h3>
-                        {service.popular && (
-                          <Badge variant="secondary" className="bg-primary text-primary-foreground">
-                            <Star className="w-3 h-3 mr-1" />
-                            Popular
-                          </Badge>
-                        )}
-                        {service.featured && (
-                          <Badge variant="secondary" className="bg-wellness-green-dark text-white">
-                            <Sparkles className="w-3 h-3 mr-1" />
-                            Featured
-                          </Badge>
-                        )}
-                      </div>
+                      <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center">
                           <Clock className="w-4 h-4 mr-1" />

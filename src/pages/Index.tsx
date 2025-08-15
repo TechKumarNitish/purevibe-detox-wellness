@@ -14,6 +14,10 @@ import {
   Clock
 } from "lucide-react";
 import heroImage from "@/assets/hero-wellness.jpg";
+import juiceCleansingImage from "@/assets/juice-cleansing.jpg";
+import herbalSteamImage from "@/assets/herbal-steam.jpg";
+import lymphaticMassageImage from "@/assets/lymphatic-massage.jpg";
+import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
 
 const Index = () => {
   const services = [
@@ -22,28 +26,28 @@ const Index = () => {
       description: "Organic cold-pressed juices to cleanse and energize your body naturally.",
       duration: "3-7 days",
       price: "From $199",
-      image: "🥤"
+      image: juiceCleansingImage
     },
     {
       title: "Herbal Steam Bath",
       description: "Detoxify through your skin with our therapeutic herbal steam treatments.",
       duration: "45 min",
       price: "$89",
-      image: "🌿"
+      image: herbalSteamImage
     },
     {
       title: "Lymphatic Drainage",
       description: "Gentle massage technique to boost circulation and eliminate toxins.",
       duration: "60 min",
       price: "$129",
-      image: "💆‍♀️"
+      image: lymphaticMassageImage
     },
     {
       title: "Full-Body Detox",
       description: "Comprehensive detox program combining multiple therapies for optimal results.",
       duration: "3 hours",
       price: "$299",
-      image: "✨"
+      image: fullBodyDetoxImage
     }
   ];
 
@@ -190,8 +194,15 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card key={service.title} className="card-shadow hover:scale-105 transition-spring overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{service.image}</div>
                   <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
                   
