@@ -6,10 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   Send,
   MessageSquare,
@@ -19,9 +19,10 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { WHATSAPP_PHONE } from "@/config";
+const PHONE_NUMBER = WHATSAPP_PHONE;
 
 const Contact = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,10 +31,20 @@ const Contact = () => {
     message: ""
   });
 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    // Prefill WhatsApp message
+    const { name, email, phone, service, message } = formData;
+    const text =
+      `Hello, I would like to inquire about your services.\n` +
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      (phone ? `Phone: ${phone}\n` : "") +
+      (service ? `Service: ${service}\n` : "") +
+      (message ? `Message: ${message}` : "");
+    const url = `https://wa.me/${WHATSAPP_PHONE.replace(/[^\d]/g, "")}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -103,7 +114,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 wellness-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,7 +128,7 @@ const Contact = () => {
               <span className="block text-primary">Journey Today</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-              Ready to transform your health? Get in touch with our wellness experts to 
+              Ready to transform your health? Get in touch with our wellness experts to
               discuss your goals and find the perfect detox program for you.
             </p>
           </div>
@@ -142,9 +153,14 @@ const Contact = () => {
                       </p>
                     ))}
                   </div>
-                  <Button variant="outline" size="sm" className="w-full">
-                    {info.action}
-                  </Button>
+                  {info.action === "Book Now" ?
+                    <Button onClick={()=>navigate("/book-now")} variant="outline" size="sm" className="w-full">
+                      {info.action}
+                    </Button> :
+                    <Button variant="outline" size="sm" className="w-full">
+                      {info.action}
+                    </Button>
+                  }
                 </CardContent>
               </Card>
             ))}
@@ -335,9 +351,11 @@ const Contact = () => {
             <p className="text-muted-foreground mb-4">
               Have more questions? We're here to help!
             </p>
-            <Button variant="outline">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Us: (555) 123-4567
+            <Button asChild variant="outline">
+              <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>
+                <Phone className="w-4 h-4 mr-2" />
+                Call Us: {PHONE_NUMBER}
+              </a>
             </Button>
           </div>
         </div>
@@ -350,10 +368,10 @@ const Contact = () => {
             Ready to Transform Your Health?
           </h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Don't wait to start your wellness journey. Book your consultation today 
+            Don't wait to start your wellness journey. Book your consultation today
             and take the first step towards a healthier, more vibrant you.
           </p>
-          <Button onClick={()=>navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
+          <Button onClick={() => navigate("/book-now")} size="lg" variant="secondary" className="text-lg px-8 py-6">
             Book Now
             <Send className="w-5 h-5 ml-2" />
           </Button>

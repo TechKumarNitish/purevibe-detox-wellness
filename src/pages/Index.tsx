@@ -23,7 +23,8 @@ import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
 import detoxTeaImage from "@/assets/detox-tea-collection.jpg";
 import supplementsImage from "@/assets/wellness-supplements.jpg";
 import skincareKitImage from "@/assets/detox-skincare-kit.jpg";
-import {Link, useNavigate} from "react-router-dom"
+
+import { WHATSAPP_PHONE } from "@/config";
 
 const Index = () => {
   const navigate=useNavigate()
@@ -122,9 +123,11 @@ const Index = () => {
               Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            {/* <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white hover:text-foreground">
-              Learn More
-            </Button> */}
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <a href={`tel:${WHATSAPP_PHONE.replace(/[^\d+]/g, "")}`}>
+                Call Us: {WHATSAPP_PHONE}
+              </a>
+            </Button>
           </div>
         </div>
         

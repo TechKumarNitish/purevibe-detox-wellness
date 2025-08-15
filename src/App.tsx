@@ -10,6 +10,7 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import BookNow from "./pages/BookNow";
+import ScrollTop from "@/components/ScrollTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollTop/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
