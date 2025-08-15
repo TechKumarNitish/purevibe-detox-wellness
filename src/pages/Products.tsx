@@ -190,10 +190,10 @@ const Products = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  {/* <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     Add to Cart
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}

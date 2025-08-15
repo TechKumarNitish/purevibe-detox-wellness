@@ -23,8 +23,10 @@ import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
 import detoxTeaImage from "@/assets/detox-tea-collection.jpg";
 import supplementsImage from "@/assets/wellness-supplements.jpg";
 import skincareKitImage from "@/assets/detox-skincare-kit.jpg";
+import {Link, useNavigate} from "react-router-dom"
 
 const Index = () => {
+  const navigate=useNavigate()
   const services = [
     {
       title: "Juice Cleansing",
@@ -100,10 +102,10 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="mb-6 animate-fade-in">
+          {/* <Badge variant="secondary" className="mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4 mr-2" />
             Premium Wellness Center
-          </Badge>
+          </Badge> */}
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in text-balance">
             Purify Your Body,
@@ -120,9 +122,9 @@ const Index = () => {
               Book Your Session
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white hover:text-foreground">
+            {/* <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white hover:text-foreground">
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </div>
         
@@ -288,17 +290,17 @@ const Index = () => {
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-2xl font-bold text-primary">{product.price}</span>
                   </div>
-                  <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  {/* <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     Add to Cart
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="text-center">
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+            <Button onClick={()=>{navigate("/products")}} size="lg" variant="outline" className="text-lg px-8 py-6">
               View All Products
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
