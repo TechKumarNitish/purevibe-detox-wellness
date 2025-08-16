@@ -2,7 +2,7 @@
 // Central config for app-wide constants
 
 
-export const WHATSAPP_PHONE = "+15551234567"; // Use your WhatsApp number here (international format, no spaces)
+export const WHATSAPP_PHONE = "+919562478562"; // Use your WhatsApp number here (international format, no spaces)
 export const PHONE_NUMBER = WHATSAPP_PHONE; // Alias for consistency
 export const EMAIL = "info@purevibe.com"; // Centralized email
 export const LOCATION = {
