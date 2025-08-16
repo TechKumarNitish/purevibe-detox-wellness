@@ -24,8 +24,9 @@ import detoxTeaImage from "@/assets/detox-tea-collection.jpg";
 import supplementsImage from "@/assets/wellness-supplements.jpg";
 import skincareKitImage from "@/assets/detox-skincare-kit.jpg";
 
-import { WHATSAPP_PHONE } from "@/config";
+import { WHATSAPP_PHONE } from "@/config";  
 import { useNavigate } from "react-router-dom";
+import { PHONE_NUMBER } from "@/config"; // Assuming you have a PHONE_NUMBER constant in your config
 
 const Index = () => {
   const navigate=useNavigate()
@@ -368,7 +369,9 @@ const Index = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground bg-primary-foreground text-primary">
-              Call Us: (555) 123-4567
+              <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>
+              Call Us: {PHONE_NUMBER}
+              </a>
             </Button>
           </div>
         </div>

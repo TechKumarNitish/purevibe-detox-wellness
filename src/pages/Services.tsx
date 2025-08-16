@@ -20,7 +20,7 @@ import colonHydrotherapyImage from "@/assets/colon-hydrotherapy.jpg";
 import lymphaticMassageImage from "@/assets/lymphatic-massage.jpg";
 import fullBodyDetoxImage from "@/assets/full-body-detox.jpg";
 import infraredSaunaImage from "@/assets/infrared-sauna.jpg";
-// import { WHATSAPP_PHONE } from "@/config";
+import { WHATSAPP_PHONE, PHONE_NUMBER } from "@/config";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
@@ -243,7 +243,7 @@ const Services = () => {
                           {service.duration}
                         </div>
                         <div className="flex items-center">
-                          <DollarSign className="w-4 h-4 mr-1" />
+                          {/* <DollarSign className="w-4 h-4 mr-1" /> */}
                           {service.price}
                         </div>
                         <div className="flex items-center">
@@ -388,8 +388,10 @@ const Services = () => {
               Book Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground bg-primary-foreground text-primary">
+              <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>
               Call: (555) 123-4567
+              </a>
             </Button>
           </div>
         </div>

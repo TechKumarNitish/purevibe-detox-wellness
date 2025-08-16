@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { WHATSAPP_PHONE } from "@/config";
-const PHONE_NUMBER = WHATSAPP_PHONE;
+import { WHATSAPP_PHONE, PHONE_NUMBER, EMAIL, LOCATION } from "@/config";
+
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -58,19 +58,22 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "Available 7 days a week"],
+      details: [PHONE_NUMBER, "Available 7 days a week"],
       action: "Call Now"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@purevibe.com", "We respond within 24 hours"],
+      details: [EMAIL, "We respond within 24 hours"],
       action: "Send Email"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      details: ["123 Wellness Way", "Beverly Hills, CA 90210"],
+      details: [
+        `${LOCATION.address}`,
+        `${LOCATION.city}, ${LOCATION.state} ${LOCATION.zip}, ${LOCATION.country}`
+      ],
       action: "Get Directions"
     },
     {
@@ -154,12 +157,33 @@ const Contact = () => {
                     ))}
                   </div>
                   {info.action === "Book Now" ?
-                    <Button onClick={()=>navigate("/book-now")} variant="outline" size="sm" className="w-full">
+                    <Button onClick={() => navigate("/book-now")} variant="outline" size="sm" className="w-full">
                       {info.action}
                     </Button> :
-                    <Button variant="outline" size="sm" className="w-full">
-                      {info.action}
-                    </Button>
+                    (info.action === "Call Now" ?
+                      <Button variant="outline" size="sm" className="w-full">
+                        <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>
+                          {info.action}
+                        </a>
+                      </Button> :
+                      <Button variant="outline" size="sm" className="w-full">
+                        {info.action === "Send Email" ? (
+                          <a href={`mailto:${EMAIL}`}>{info.action}</a>
+                        ) : info.action === "Get Directions" ? (
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                              `${LOCATION.address}, ${LOCATION.city}, ${LOCATION.state} ${LOCATION.zip}, ${LOCATION.country}`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {info.action}
+                          </a>
+                        ) : (
+                          info.action
+                        )}
+                      </Button>
+                    )
                   }
                 </CardContent>
               </Card>
@@ -286,7 +310,7 @@ const Contact = () => {
                     <div className="text-center text-white">
                       <MapPin className="w-12 h-12 mx-auto mb-4" />
                       <h3 className="text-xl font-bold mb-2">Visit Our Center</h3>
-                      <p>123 Wellness Way, Beverly Hills, CA 90210</p>
+                      <p>{LOCATION.address}, {LOCATION.city}, {LOCATION.state} {LOCATION.zip}, {LOCATION.country}</p>
                       <Button variant="secondary" className="mt-4">
                         Get Directions
                       </Button>

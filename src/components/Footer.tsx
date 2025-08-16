@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PHONE_NUMBER, WHATSAPP_PHONE, EMAIL, LOCATION } from "@/config";
 
 const Footer = () => {
   return (
@@ -70,17 +71,17 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">{PHONE_NUMBER}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">info@purevibe.com</span>
+                <span className="text-muted-foreground">{EMAIL}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-muted-foreground">
-                  123 Wellness Way<br />
-                  Beverly Hills, CA 90210
+                  {LOCATION.address},<br />
+                  {LOCATION.city}, {LOCATION.state} {LOCATION.zip}, {LOCATION.country}
                 </span>
               </div>
             </div>
